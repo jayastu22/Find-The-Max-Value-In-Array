@@ -1,0 +1,49 @@
+
+import java.util.Scanner;
+public class CharMax{
+	
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of array");
+		
+		int num = sc.nextInt();
+		
+		int [] size = new int [ num];
+		
+		
+		
+		System.out.println("Enter the element of array");
+		
+		for (int i = 0; i<size.length; i++) {
+			
+			size[i] = sc.nextInt();
+		}
+		
+		int max = size[0], secondmax = size[1], thirdmax = size[2];
+		
+		for(int i = 0; i<size.length; i++) {
+			
+			if(size[i] >max) {
+				
+				
+				thirdmax = secondmax;
+				secondmax = size[i];
+				max = size[i];
+			}
+			else if (size[i] >secondmax && size[i] != max) {
+				
+				thirdmax = secondmax;
+				secondmax = size[i];
+				
+			}
+			else if (size[i] > thirdmax && size[i] != secondmax && size[i] != max) {
+				
+				thirdmax = size[i];
+			}
+		}
+		System.out.println("Its a max value in array = " +max);
+		System.out.println("Its a 2nd max value in array =  " +secondmax);
+		System.out.println("Its a 3rd max value in array = " +thirdmax);
+		
+	}
+}
